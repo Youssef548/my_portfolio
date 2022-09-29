@@ -91,6 +91,8 @@
   border-radius: 6px;
   background-color: #32323f;
   border: 2px solid #32323f;
+  color: white;
+  font-size: 2rem;
 }
 .success-message-contact {
   color: #fff;
