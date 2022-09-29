@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillEye } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
-import myImage from "../../imgs/portrait 1.png";
+import myImage from "../../imgs/header-img.png";
 import Break from "../Break/Break";
 import { motion, useSpring } from "framer-motion/dist/framer-motion";
 
@@ -54,6 +54,7 @@ const Hero = () => {
             }}
           >
             <img src={myImage} alt="profile img" />
+            <div className="img-bg"></div>
           </motion.div>
         </div>
       </div>
