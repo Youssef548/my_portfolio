@@ -20,7 +20,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #1a1a29;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .container {
