@@ -9,7 +9,7 @@ const Connect = () => {
       <p>Statisfied with me? Please contact me</p>
       <ul className="social-icon-links">
         {socialLinks.map((item, index) => {
-          const { id, name, icon, url } = item;
+          const { name, icon, url } = item;
           return (
             <li key={index}>
               <a

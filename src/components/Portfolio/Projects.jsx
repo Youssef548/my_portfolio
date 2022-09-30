@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import {
-  AnimatePresence,
+  // AnimatePresence,
   motion,
-  useSpring,
+  // useSpring,
 } from "framer-motion/dist/framer-motion";
 
 import { projectsData } from "../../data";
@@ -13,10 +13,10 @@ import Project from "./Project";
 import "./Projects.css";
 
 const Projects = () => {
-  const transition = {
-    duration: 0.3,
-    type: useSpring,
-  };
+  // const transition = {
+  //   duration: 0.3,
+  //   type: useSpring,
+  // };
   const [item, setItem] = useState({ name: "all" });
   const [projects, setProjects] = useState([]);
   const [active, setActive] = useState(1);
