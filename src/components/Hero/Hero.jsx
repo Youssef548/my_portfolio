@@ -58,7 +58,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-      <Break />
+      {/* <Break /> */}
     </header>
   );
 };

@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="contact">
           <motion.div
             whileInView={{ opacity: 1 }}
-            transition={{ transition }}
+            transition={transition}
             initial={{ opacity: 0 }}
             className="connect-with-me"
           >
@@ -25,7 +25,7 @@ const Contact = () => {
 
           <motion.div
             whileInView={{ opacity: 1 }}
-            transition={{ transition }}
+            transition={transition}
             initial={{ opacity: 0 }}
             className="contact-form"
           >

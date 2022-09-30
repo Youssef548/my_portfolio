@@ -14,7 +14,7 @@ const Portfolio = () => {
       id="portfolio"
       className="portfolio"
       whileInView={{ opacity: 1 }}
-      transition={{ transition }}
+      transition={transition}
       initial={{
         opacity: 0,
       }}

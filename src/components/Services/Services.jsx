@@ -7,7 +7,7 @@ import "./Services.css";
 
 const Services = () => {
   const transition = {
-    duration: 1,
+    duration: 0.5,
     type: useSpring,
   };
 
@@ -29,7 +29,7 @@ const Services = () => {
             return (
               <motion.div
                 whileInView={{ opacity: 1 }}
-                transition={{ transition }}
+                transition={transition}
                 initial={{
                   opacity: 0,
                 }}
@@ -49,6 +49,24 @@ const Services = () => {
             );
           })}
         </div>
+        <motion.div
+          className="cv"
+          whileInView={{ opacity: 1 }}
+          transition={transition}
+          initial={{
+            opacity: 0,
+          }}
+        >
+          <button className="cv-btn">
+            <a
+              href="https://spiral-antique-cbb.notion.site/Youssef-Ahmed-2c65b83c13e140538b746f7fb5a7c5aa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+            </a>
+          </button>
+        </motion.div>
       </div>
     </div>
   );
