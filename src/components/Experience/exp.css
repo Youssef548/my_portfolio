@@ -1,0 +1,12 @@
+.test::after {
+    content: '';
+    position: absolute;
+    border-width: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -14px;
+    border-right-color: #3d3e42;
+    border-left-color: #606063;
+    border-bottom-color: #3d3e42;
+    border-top-color: #3d3e42;
+}
