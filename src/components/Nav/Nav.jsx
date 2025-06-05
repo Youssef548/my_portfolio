@@ -22,22 +22,36 @@ const Nav = () => {
   };
 
   const fixNav = () => {
-    if (window.scrollY < 784) {
-      setNavFixed(false);
-      setActive(0);
-    }
-    if (window.scrollY > 783) {
+    // Fix the navbar after scrolling past the hero section
+    if (window.scrollY > 100) {
       setNavFixed(true);
-      setActive(1);
+    } else {
+      setNavFixed(false);
     }
-    if (window.scrollY > 1806) {
-      setActive(2);
-    }
-    if (window.scrollY > 2450) {
-      setActive(3);
-    }
-    if (window.scrollY > 4250) {
-      setActive(4);
+    
+    const sectionIds = ['home', 'about', 'skills', 'services', 'experience', 'portfolio', 'contact'];
+    
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    
+    const scrollPosition = window.scrollY + 300;
+    
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
+      if (!section) continue;
+      
+      // Get section position and dimensions
+      const sectionTop = section.offsetTop;
+      
+      // If we've scrolled to or past this section, make it active
+      if (scrollPosition >= sectionTop) {
+        const sectionId = section.getAttribute('id');
+        const navIndex = links.findIndex(link => link.url === `#${sectionId}`);
+        
+        if (navIndex !== -1 && navIndex !== active) {
+          setActive(navIndex);
+        }
+        break; // Exit the loop once we've found our section
+      }
     }
   };
   useEffect(() => {
@@ -65,7 +79,23 @@ const Nav = () => {
                 onClick={(e) => handleClick(e, index)}
                 className={`${active === index ? "active" : ""}`}
               >
-                <a href={url} onClick={handleCloseNav}>
+                <a 
+                  href={url} 
+                  onClick={(e) => {
+                    handleCloseNav();
+                    
+                    // Smooth scroll to section when clicking nav links
+                    if (url.startsWith('#')) {
+                      e.preventDefault();
+                      const element = document.querySelector(url);
+                      if (element) {
+                        const yOffset = -80; // Offset for fixed header
+                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                      }
+                    }
+                  }}
+                >
                   {text}
                 </a>
               </li>
