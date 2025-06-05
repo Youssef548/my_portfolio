@@ -1,9 +1,13 @@
 .services-section {
-  padding: 10rem 0;
+  padding-bottom: 10rem;
   background-color: #1a1a29;
   color: #fff;
   position: relative;
   overflow: hidden;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .services-section .section-title {
@@ -35,6 +39,7 @@
   gap: 3rem;
   flex: 1 0 50%;
 }
+
 .service-box {
   background: rgba(41, 44, 54, 0.6);
   background-image: var(--glass-gradient, linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%));
@@ -49,36 +54,43 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-}
-
-.service-box::before {
-  content: "";
-  position: absolute;
-  background-color: #343a40;
-  width: 0%;
   height: 100%;
-  z-index: -1;
-  transition: 0.4s ease all;
+  display: flex;
+  flex-direction: column;
 }
-
-/* .service-box::before {
-  left: 0;
-  top: 0;
-}*/
 
 .service-box::before {
+  content: '';
+  position: absolute;
   top: 0;
-  left: 0;
-}
-
-.service-box:hover::before,
-.service-box:hover::after {
+  left: -100%;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: 0.5s;
 }
 
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(117, 98, 224, 0.3);
+.service-box:hover::before {
+  left: 100%;
+}
+
+.service-box:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(117, 98, 224, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: 2px solid rgba(117, 98, 224, 0.5);
+}
+
+.services-section .service-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px rgba(117, 98, 224, 0.3));
+  transition: all 0.3s ease;
+}
+
+.service-box:hover .service-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(117, 98, 224, 0.5));
 }
 
 .service-box .service-icon-box {
@@ -86,12 +98,26 @@
   align-items: start;
   gap: 1.5rem;
 }
-.service-icon-box {
-  margin-bottom: 3rem;
+
+.services-section .service-icon-box {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .service-icon-box .service-title {
   margin: 0;
-  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #7562e0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-icon-box .service-description {
   font-size: 2.4rem;
   font-weight: normal;
   max-width: 140px;
@@ -116,27 +142,49 @@
   transform: scaleX(1);
 }
 
-.service-box .service-info {
-  color: #ccc;
-  line-height: 1.8;
-  font-size: 1.6rem;
+.services-section .service-info {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #d3d3d3;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .cv {
   text-align: center;
   margin-top: 5rem;
 }
-.cv-btn {
-  border-radius: 1.2rem;
-  padding: 10px 30px;
-  background-color: #7562e0;
-  border: 2px solid #7562e0;
+
+.services-section .cv-btn {
+  background-color: rgba(117, 98, 224, 0.1);
+  border: 1px solid rgba(117, 98, 224, 0.5);
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s ease all;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .cv-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.services-section .cv-btn:hover::before {
+  left: 100%;
 }
 
 .cv-btn:hover {
-  background-color: #1a1a29;
+  background-color: #7562e0;
 }
 
 .cv-btn a {

@@ -69,16 +69,23 @@ export const services = [
   {
     id: 1,
     serviceIcon: FrontIcon,
-    text: "Front-end Development",
+    text: "Frontend Development",
     serviceInfo:
-      " displaying the right content on the different target devices and systems Smartphone, Desktop-Browser.",
+      "Creating responsive, intuitive user interfaces with React, Next.js, and modern CSS. Building performant SPAs with optimized rendering and state management for exceptional user experiences.",
   },
   {
     id: 2,
     serviceIcon: npmIcon,
-    text: "NPM and NODEJS",
+    text: "Backend Development",
     serviceInfo:
-      "install and switch between multiple versions of Node.js and npm on your system so you can test your applications",
+      "Designing scalable APIs and server architectures with Node.js, Express, and Nest.js. Implementing secure authentication, database optimization, and real-time features to handle high-traffic applications.",
+  },
+  {
+    id: 3,
+    serviceIcon: NODE,
+    text: "Full-Stack Integration",
+    serviceInfo:
+      "Seamlessly connecting frontend and backend systems with efficient data flow and state management. Deploying with Docker, PM2, and CI/CD pipelines for reliable, scalable applications.",
   },
 ];
 
