@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero.jsx";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Services from "./components/Services/Services";
 import Skills from "./components/Skills/Skills";
+import Experience from "./components/Experience/Experience";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
@@ -15,6 +16,7 @@ function App() {
       <AboutMe />
       <Skills />
       <Services />
+      <Experience />
       <Portfolio />
       <Contact />
       <Footer />

@@ -40,16 +40,26 @@ export const links = [
   },
   {
     id: 3,
+    url: "#skills",
+    text: "skills",
+  },
+  {
+    id: 4,
     url: "#services",
     text: "services",
   },
   {
-    id: 4,
+    id: 5,
+    url: "#experience",
+    text: "experience",
+  },
+  {
+    id: 6,
     url: "#portfolio",
     text: "projects",
   },
   {
-    id: 5,
+    id: 7,
     url: "#contact",
     text: "contact",
   },
@@ -235,6 +245,48 @@ export const projectsNav = [
     id: 5,
     name: "nodejs",
   },
+];
+
+export const experience = [
+  {
+    id: 1,
+    title: "Front-end Developer",
+    company: "TechSolutions Inc.",
+    date: "Jan 2022 - Present",
+    description: "Working as a front-end developer focusing on building responsive web applications using modern JavaScript frameworks.",
+    responsibilities: [
+      "Developed and maintained code for client websites using HTML5, CSS3, JavaScript, React.js",
+      "Collaborated with back-end developers and designers to implement user interfaces",
+      "Optimized web applications for maximum speed and scalability",
+      "Implemented responsive design principles ensuring cross-browser compatibility"
+    ]
+  },
+  {
+    id: 2,
+    title: "Web Developer Intern",
+    company: "Digital Innovations",
+    date: "Jun 2021 - Dec 2021",
+    description: "Worked as a web developer intern to gain practical experience with modern web technologies.",
+    responsibilities: [
+      "Assisted in developing responsive websites using HTML, CSS, and JavaScript",
+      "Collaborated with senior developers to implement new features and functionality",
+      "Participated in code reviews and team meetings to improve development processes",
+      "Gained experience with React.js and Node.js through mentored projects"
+    ]
+  },
+  {
+    id: 3,
+    title: "Freelance Web Developer",
+    company: "Self-employed",
+    date: "Jan 2020 - May 2021",
+    description: "Worked with various clients to develop custom websites and web applications.",
+    responsibilities: [
+      "Created custom websites for small businesses and individual clients",
+      "Implemented responsive designs and modern UI/UX principles",
+      "Managed project timelines and client communication",
+      "Provided ongoing maintenance and support for completed projects"
+    ]
+  }
 ];
 
 export const socialLinks = [

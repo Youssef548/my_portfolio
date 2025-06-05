@@ -1,14 +1,59 @@
 /* 
-  Colors:
+  Design System Variables
+  ----------------------
   primary-color: #7562E0
+  primary-light: #9d8bf5
+  primary-dark: #5a4cb8
   light-color: #F5F5F5
   low-priority: #848191
   white-color: #FFFFFF
   dark-color: #000036
-  secondary-color:Secondary-colour
+  dark-bg: #1a1a29
+  dark-card: #292c36
+  accent-color: #ff7d50
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+:root {
+  /* Colors */
+  --primary: #7562E0;
+  --primary-light: #9d8bf5;
+  --primary-dark: #5a4cb8;
+  --light: #F5F5F5;
+  --muted: #848191;
+  --white: #FFFFFF;
+  --dark: #000036;
+  --dark-bg: #1a1a29;
+  --dark-card: #292c36;
+  --accent: #ff7d50;
+  
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  --heading-line-height: 1.2;
+  --body-line-height: 1.6;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-primary: 0 5px 15px rgba(117, 98, 224, 0.4);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("./styles/glassmorphism.css");
+@import url("./styles/animations.css");
 
 html {
   font-size: 62.5%;
@@ -18,9 +63,13 @@ html {
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #1a1a29;
+  font-family: var(--font-family, "Poppins", sans-serif);
+  background-color: var(--dark-bg, #1a1a29);
+  color: var(--light, #F5F5F5);
   overflow-x: hidden;
+  line-height: var(--body-line-height, 1.6);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -72,6 +121,151 @@ body {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: var(--heading-line-height, 1.2);
+  margin-top: 0;
+  color: var(--white, #FFFFFF);
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md, 2rem);
+}
+
 a {
   text-decoration: none;
+  color: var(--primary, #7562E0);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-light, #9d8bf5);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary, #7562E0);
+  color: var(--white, #FFFFFF);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark, #5a4cb8);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary, #7562E0);
+  color: var(--primary, #7562E0);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary, #7562E0);
+  color: var(--white, #FFFFFF);
+  transform: translateY(-3px);
+}
+
+/* Section Styles */
+.section {
+  padding: var(--spacing-xl, 8rem) 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-lg, 4rem);
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-sm, 1rem);
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary, #7562E0);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary, #7562E0);
+}
+
+.text-accent {
+  color: var(--accent, #ff7d50);
+}
+
+.text-muted {
+  color: var(--muted, #848191);
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-xs, 0.5rem);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-sm, 1rem);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-md, 2rem);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-lg, 4rem);
+}
+
+.mb-5 {
+  margin-bottom: var(--spacing-xl, 8rem);
 }

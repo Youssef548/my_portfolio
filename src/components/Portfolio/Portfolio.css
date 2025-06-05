@@ -1,12 +1,135 @@
 .portfolio {
   padding: 10rem 0;
+  background-color: #1a1a29;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(117, 98, 224, 0.15), transparent 70%);
+  top: 5%;
+  right: -5%;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.portfolio::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(117, 98, 224, 0.1), transparent 70%);
+  bottom: 10%;
+  left: -5%;
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .portfolio .portfolio-text {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .portfolio-title {
   color: #7562e0;
   font-size: 4rem;
   letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio-title::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background-color: #7562e0;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Add styles for portfolio items */
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin: 4rem auto;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-item {
+  background: rgba(41, 44, 54, 0.6);
+  background-image: var(--glass-gradient, linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--glass-transition, all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+  position: relative;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(117, 98, 224, 0.3);
+}
+
+.portfolio-item-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(26, 26, 41, 0.9), transparent);
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-item-title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio-item-title::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #7562e0, transparent);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-title::before {
+  transform: scaleX(1);
+}
+
+.portfolio-item-description {
+  color: #ccc;
+  font-size: 1.4rem;
+  line-height: 1.6;
 }
