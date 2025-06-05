@@ -1,31 +1,34 @@
 import React from "react";
 import Projects from "./Projects";
-import { motion, useSpring } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
+import { useInView } from "react-intersection-observer";
+import BackgroundElements from "../common/BackgroundElements";
 
 import "./Portfolio.css";
 
 const Portfolio = () => {
-  const transition = {
-    duration: 1,
-    type: useSpring,
-  };
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  });
+  
   return (
-    <motion.section
-      id="portfolio"
-      className="portfolio"
-      whileInView={{ opacity: 1 }}
-      transition={transition}
-      initial={{
-        opacity: 0,
-      }}
-    >
+    <section id="portfolio" className="portfolio">
+      <BackgroundElements icons={true} />
       <div className="container">
-        <div className="portfolio-text">
-          <h3 className="portfolio-title">Portfolio</h3>
-        </div>
+        <motion.div
+          ref={ref}
+          className="portfolio-text"
+          initial={{ opacity: 0, y: -20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="section-title">my work</h3>
+          <h4 className="special-in">featured projects</h4>
+        </motion.div>
         <Projects />
       </div>
-    </motion.section>
+    </section>
   );
 };
 

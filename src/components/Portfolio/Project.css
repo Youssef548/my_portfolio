@@ -1,64 +1,95 @@
-.projects-data .project-box {
-  background-color: #31313f;
+.projects-data .project-box.glass-card {
+  background: rgba(41, 44, 54, 0.6);
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: 350px;
+  max-width: 100%;
+  margin-bottom: 2rem;
 }
 
 .project-box .project-box-text {
-  padding: 0 2rem;
+  padding: 1.5rem 2rem 2rem;
 }
 
 .project-box .project-name {
   margin-top: 5px;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   color: #7562e0;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(117, 98, 224, 0.3);
 }
 
 .project-box .project-info {
   margin-top: 5px;
-  color: white;
-  font-size: 1.8rem;
-  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
 .link-btns {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .btn {
-  padding: 1rem 2.5rem;
-  /* background-color: #7562e0; */
+  padding: 0.8rem 1.5rem;
   color: white;
-  border-radius: 5px;
-  /* border: solid 1px #7562e0; */
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
 }
 
 .view-demo {
   background-color: #7562e0;
   color: white;
-  border-radius: 5px;
-  border: solid 2px #7562e0;
-  transition: 0.3s ease all;
+  border-radius: 8px;
+  border: solid 1px #7562e0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(117, 98, 224, 0.4);
 }
 
 .view-demo:hover {
-  background-color: #31313f;
+  background-color: rgba(117, 98, 224, 0.8);
+  box-shadow: 0 0 20px rgba(117, 98, 224, 0.6);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(3px);
 }
 
 .git-repo {
-  background-color: #31313f;
+  background-color: transparent;
   color: white;
-  border: solid 2px #7562e0;
-  transition: 0.3s ease all;
+  border-radius: 8px;
+  border: solid 1px #7562e0;
+  transition: all 0.3s ease;
 }
 
 .git-repo:hover {
-  background-color: #7562e0;
+  background-color: rgba(117, 98, 224, 0.2);
+  box-shadow: 0 0 15px rgba(117, 98, 224, 0.3);
 }
 
 a.btn.view-demo,
@@ -70,4 +101,32 @@ a.btn.git-repo {
   text-transform: capitalize;
   cursor: pointer;
   font-weight: normal;
+}
+
+.project-image-container {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-box:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(26, 26, 41, 0.9), transparent);
+  pointer-events: none;
 }

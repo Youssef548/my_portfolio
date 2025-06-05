@@ -235,22 +235,27 @@ export const projectsNav = [
   {
     id: 1,
     name: "all",
+    displayName: "All",
   },
   {
     id: 2,
     name: "htmlAndCss",
+    displayName: "HTML & CSS",
   },
   {
     id: 3,
     name: "js",
+    displayName: "JavaScript",
   },
   {
     id: 4,
     name: "react",
+    displayName: "React",
   },
   {
     id: 5,
     name: "nodejs",
+    displayName: "Node.js",
   },
 ];
 

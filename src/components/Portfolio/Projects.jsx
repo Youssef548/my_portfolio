@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-import {
-  // AnimatePresence,
-  motion,
-  // useSpring,
-} from "framer-motion/dist/framer-motion";
+import { motion, AnimatePresence } from "framer-motion/dist/framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { projectsData } from "../../data";
 import { projectsNav } from "../../data";
@@ -13,10 +9,11 @@ import Project from "./Project";
 import "./Projects.css";
 
 const Projects = () => {
-  // const transition = {
-  //   duration: 0.3,
-  //   type: useSpring,
-  // };
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  });
+  
   const [item, setItem] = useState({ name: "all" });
   const [projects, setProjects] = useState([]);
   const [active, setActive] = useState(1);
@@ -26,49 +23,63 @@ const Projects = () => {
       return setProjects(projectsData);
     }
     const newProjets = projectsData.filter((project) => {
-      return project.category.toLowerCase() === item.name;
+      return project.category === item.name; // Remove toLowerCase() as categories are case-sensitive
     });
     setProjects(newProjets);
   }, [item]);
 
-  const handleClick = (event, index) => {
-    setItem({ name: event.target.textContent.toLowerCase() });
-    setActive(index);
+  const handleClick = (event, id) => {
+    // Get the original category name from projectsNav instead of using the display text
+    const categoryName = projectsNav.find(item => item.id === id)?.name || "all";
+    setItem({ name: categoryName });
+    setActive(id);
   };
 
   return (
     <div className="portfolio-projects">
-      <nav className="portfolio-nav">
+      <motion.nav 
+        className="portfolio-nav"
+        ref={ref}
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
+      >
         <ul className="portfolio-items">
-          {projectsNav.map((project, index) => {
-            const { id, name } = project;
+          {projectsNav.map((project) => {
+            const { id, name, displayName } = project;
             return (
-              <li
+              <motion.li
                 onClick={(e) => {
                   handleClick(e, id);
                 }}
                 className={`${active === id ? "active" : ""}`}
                 key={id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                {name}
-              </li>
+                {displayName || name}
+              </motion.li>
             );
           })}
         </ul>
-      </nav>
+      </motion.nav>
       <section>
-        <motion.div
-          layout
-          className="projects-data"
-          whileInView={{ opacity: 1 }}
-          initial={{
-            opacity: 0,
-          }}
-        >
-          {projects.map((project) => {
-            return <Project project={project} key={project.id} />;
-          })}
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            layout
+            className="projects-data"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, staggerChildren: 0.1 }}
+            key={item.name}
+          >
+            {projects.map((project) => {
+              return <Project project={project} key={project.id} />;
+            })}
+          </motion.div>
+        </AnimatePresence>
       </section>
     </div>
   );
