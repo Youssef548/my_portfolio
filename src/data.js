@@ -257,41 +257,27 @@ export const projectsNav = [
 export const experience = [
   {
     id: 1,
-    title: "Front-end Developer",
-    company: "TechSolutions Inc.",
-    date: "Jan 2022 - Present",
-    description: "Working as a front-end developer focusing on building responsive web applications using modern JavaScript frameworks.",
+    title: "Full Stack Developer",
+    company: "Native Code IQ",
+    date: "Oct 2023 - Present",
+    description: "Built and deployed an HR SaaS used by 3 companies and 1,000+ employees, featuring fingerprint attendance, payroll, and real-time tracking. Led backend and infrastructure efforts, scaling to 180K+ daily requests with Docker and PM2.",
     responsibilities: [
-      "Developed and maintained code for client websites using HTML5, CSS3, JavaScript, React.js",
-      "Collaborated with back-end developers and designers to implement user interfaces",
-      "Optimized web applications for maximum speed and scalability",
-      "Implemented responsive design principles ensuring cross-browser compatibility"
+      "Developed and deployed an HR SaaS adopted by 3 companies and 1,000+ employees, with fingerprint attendance, payroll automation, and fraud detection.",
+      "Optimized server performance with Docker-based load balancing and PM2, handling 180K+ daily requests in production with high reliability.",
+      "Implemented real-time employee tracking and custom activity reports using WebSockets, enhancing operational visibility and accountability.",
+      "Collaborated with a Flutter developer and deployed the mobile app on Google Play, now used by 1,000+ employees."
     ]
   },
   {
     id: 2,
-    title: "Web Developer Intern",
-    company: "Digital Innovations",
-    date: "Jun 2021 - Dec 2021",
-    description: "Worked as a web developer intern to gain practical experience with modern web technologies.",
+    title: "Software Engineer Intern",
+    company: "KAL BNYAN-EL MARSOS",
+    date: "Nov 2022 - Nov 2023",
+    description: "Learned full-stack development using the MERN stack, focusing on responsive UIs, RESTful APIs, and database integration through hands-on practice and guided training.",
     responsibilities: [
-      "Assisted in developing responsive websites using HTML, CSS, and JavaScript",
-      "Collaborated with senior developers to implement new features and functionality",
-      "Participated in code reviews and team meetings to improve development processes",
-      "Gained experience with React.js and Node.js through mentored projects"
-    ]
-  },
-  {
-    id: 3,
-    title: "Freelance Web Developer",
-    company: "Self-employed",
-    date: "Jan 2020 - May 2021",
-    description: "Worked with various clients to develop custom websites and web applications.",
-    responsibilities: [
-      "Created custom websites for small businesses and individual clients",
-      "Implemented responsive designs and modern UI/UX principles",
-      "Managed project timelines and client communication",
-      "Provided ongoing maintenance and support for completed projects"
+      "Trained in HTML, CSS, JavaScript, React, Express, and MongoDB.",
+      "Built full-stack web development projects, focusing on responsive and interactive web applications.",
+      "Gained experience in RESTful API design and database integration"
     ]
   }
 ];
