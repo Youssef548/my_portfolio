@@ -4,6 +4,7 @@ import { motion, useSpring } from "framer-motion/dist/framer-motion";
 import "./AboutMe.css";
 import "../../index.css";
 import me from "../../imgs/me.jpg";
+import BackgroundElements from "../common/BackgroundElements";
 
 const AboutMe = () => {
   const transition = {
@@ -13,6 +14,7 @@ const AboutMe = () => {
 
   return (
     <article className="about-section" id="about">
+      <BackgroundElements />
       <div className="container">
         <div className="about-me">
           <motion.div
@@ -24,7 +26,7 @@ const AboutMe = () => {
               opacity: 0,
             }}
           >
-            <img src={me} alt="my-iamge" />
+            <img src={me} alt="Youssef Fawzi" />
           </motion.div>
           <motion.div
             whileInView={{ transform: "translateX(0%)", opacity: 1 }}
@@ -35,13 +37,18 @@ const AboutMe = () => {
             }}
             className="info-section"
           >
-            <h3 className="section-title">About Me:</h3>
-            <h3 className="about-title">Hi, my name is youssef ahmed</h3>
-            <p className="info">
-              I am front-end web developer, i have honed skills in web
-              development and i have core understanding front-end design
-              principles.
-            </p>
+            <h3 className="section-title">About Me</h3>
+            <div className="info">
+              <p>
+                I'm a MERN & Nest.js Full-Stack Engineer with 2+ years of experience building scalable SaaS and real-time systems. I specialize in delivering performant, secure APIs and creating intuitive user interfaces with modern design principles.
+              </p>
+              <p>
+                At Native Code IQ, I engineered HR and healthcare platforms serving 1,000+ users, including biometric attendance tracking, payroll automation, and backend scaling to handle 180K+ daily requests using PM2 and Docker.
+              </p>
+              <p>
+                I'm passionate about creating clean, maintainable code and currently focused on mastering backend architecture while continuing to enhance my frontend expertise.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
