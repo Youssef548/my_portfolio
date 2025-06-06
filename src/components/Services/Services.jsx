@@ -1,6 +1,6 @@
 import React from "react";
 import { services } from "../../data";
-import { motion, useSpring } from "framer-motion/dist/framer-motion";
+import { motion, useSpring } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import BackgroundElements from "../common/BackgroundElements";
 

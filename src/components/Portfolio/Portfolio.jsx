@@ -1,6 +1,6 @@
 import React from "react";
 import Projects from "./Projects";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import BackgroundElements from "../common/BackgroundElements";
 

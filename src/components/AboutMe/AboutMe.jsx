@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useSpring } from "framer-motion/dist/framer-motion";
+import { motion, useSpring } from "framer-motion";
 
 import "./AboutMe.css";
 import "../../index.css";

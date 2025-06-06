@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { FaCode, FaHeart } from "react-icons/fa";
 import { links } from "../../data";
 import { socialLinks } from "../../data";

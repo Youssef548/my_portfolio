@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillEye } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaCode, FaReact } from "react-icons/fa";
-import { motion, useSpring } from "framer-motion/dist/framer-motion";
+import { motion, useSpring } from "framer-motion";
 
 import "../../index.css";
 import "./Hero.css";

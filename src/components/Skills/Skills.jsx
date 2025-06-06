@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { skills } from "../../data";
-import { motion, useAnimation } from "framer-motion/dist/framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { BsArrowRight } from "react-icons/bs";
 import BackgroundElements from "../common/BackgroundElements";

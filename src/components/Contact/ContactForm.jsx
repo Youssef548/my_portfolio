@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { FiSend } from "react-icons/fi";
 import { BiCheckCircle } from "react-icons/bi";
 
