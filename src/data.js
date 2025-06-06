@@ -288,17 +288,17 @@ export const experience = [
 ];
 
 export const socialLinks = [
-  {
-    id: 1,
-    name: "facebook",
-    icon: <BsFacebook />,
-    url: "https://www.facebook.com/profile.php?id=100037880400267",
-  },
+  // {
+  //   id: 1,
+  //   name: "facebook",
+  //   icon: <BsFacebook />,
+  //   url: "https://www.facebook.com/profile.php?id=100037880400267",
+  // },
   {
     id: 2,
     name: "linkedin",
     icon: <BsLinkedin />,
-    url: "https://www.linkedin.com/in/youssef-ahmed-a50042203/",
+    url: "https://www.linkedin.com/in/yousef-fawzy/",
   },
   {
     id: 3,
@@ -306,10 +306,10 @@ export const socialLinks = [
     icon: <BsGithub />,
     url: "https://github.com/Youssef548",
   },
-  {
-    id: 4,
-    name: "twitter",
-    icon: <BsTwitter />,
-    url: "none",
-  },
+  // {
+  //   id: 4,
+  //   name: "twitter",
+  //   icon: <BsTwitter />,
+  //   url: "none",
+  // },
 ];
