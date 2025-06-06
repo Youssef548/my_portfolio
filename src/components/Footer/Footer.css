@@ -1,12 +1,43 @@
 .footer {
+  position: relative;
   background-color: #181824;
-  padding: 10rem 0;
+  padding: 10rem 0 5rem;
+  overflow: hidden;
+}
+
+.footer-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(117, 98, 224, 0.15), transparent 70%);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(30px);
+  opacity: 0.8;
+  pointer-events: none; /* This ensures the glow doesn't interfere with mouse events */
 }
 
 .footer .logo a {
   text-decoration: none;
   font-size: 2.6rem;
   color: #7562e0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-shadow: 0 0 10px rgba(117, 98, 224, 0.3);
+  transition: all 0.3s ease;
+}
+
+.footer .logo a:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px rgba(117, 98, 224, 0.5);
+}
+
+.logo-icon {
+  font-size: 2.2rem;
 }
 .footer-nav {
   display: flex;
@@ -49,16 +80,33 @@
   padding: 0;
 }
 
-.footer-social-links a {
+.footer-social-links a.social-icon-link {
   color: #7562e0;
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(117, 98, 224, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-social-links a.social-icon-link:hover {
+  color: #fff;
+  background: #7562e0;
+  box-shadow: 0 8px 20px rgba(117, 98, 224, 0.4);
 }
 
 .footer .break-line {
   margin: 5rem 0;
   width: 100%;
-  background: #777;
+  background: linear-gradient(90deg, transparent, rgba(117, 98, 224, 0.5), transparent);
   height: 1px;
+  position: relative;
+  z-index: 1;
 }
 
 .terms {
@@ -72,11 +120,27 @@
   color: white;
   font-weight: 500;
   transition: 0.3s ease all;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .made-by h4:hover {
   color: #7562e0;
   cursor: pointer;
+}
+
+.heart-icon {
+  color: #ff6b6b;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+  60% { transform: scale(1); }
 }
 
 .rules ul {
