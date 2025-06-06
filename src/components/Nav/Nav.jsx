@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { links } from "../../data";
 import { BsList } from "react-icons/bs";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { FaCode } from "react-icons/fa";
 import "../../index.css";
 import "./Nav.css";
 
@@ -62,7 +63,7 @@ const Nav = () => {
     <div className={`${navFix ? "nav-section fixed" : "nav-section"}`}>
       <nav className={`${openList ? "header-nav open" : "header-nav"}`}>
         <div className="logo">
-          <a href="/">Youssef Ahmed</a>
+          <a href="/"><FaCode className="logo-icon" /> Youssef Fawzi</a>
         </div>
         <span className="bullet-list" onClick={handleOpenNav}>
           <BsList />
