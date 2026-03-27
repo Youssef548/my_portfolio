@@ -86,8 +86,9 @@ jobs:
             echo "==> Ensuring repo is initialized..."
             if [ ! -d .git ]; then
               git init
-              git remote add origin git@github.com:Youssef548/my_portfolio.git
             fi
+            git remote set-url origin github-my_portfolio:Youssef548/my_portfolio.git 2>/dev/null || \
+              git remote add origin github-my_portfolio:Youssef548/my_portfolio.git
 
             echo "==> Pulling latest config..."
             git fetch origin temp-branch
