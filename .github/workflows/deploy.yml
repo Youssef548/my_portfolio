@@ -79,6 +79,12 @@ jobs:
           command_timeout: 5m
           script: |
             set -euo pipefail
+
+            echo "==> Ensuring repo is cloned..."
+            if [ ! -d /opt/my_portfolio/.git ]; then
+              git clone git@github-personal:Youssef548/my_portfolio.git /opt/my_portfolio
+            fi
+
             cd /opt/my_portfolio
 
             echo "==> Pulling latest config..."
