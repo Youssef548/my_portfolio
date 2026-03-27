@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches: [temp-branch]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: Abdulkhalek-1/server-gateway/.github/workflows/docker-deploy.yml@main
+    with:
+      image_name: my-portfolio
+      service_name: app
+      deploy_path: /opt/my_portfolio
+    secrets:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}

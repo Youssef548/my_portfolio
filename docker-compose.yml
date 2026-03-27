@@ -1,0 +1,18 @@
+services:
+  app:
+    image: ghcr.io/youssef548/my-portfolio:${IMAGE_TAG:-latest}
+    container_name: my_portfolio
+    restart: unless-stopped
+    networks:
+      - gateway
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.rule=Host(`yfawzy.dev`) || Host(`www.yfawzy.dev`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.middlewares=secure-default@file"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=80"
+      - "traefik.docker.network=gateway"
+
+networks:
+  gateway:
+    external: true
