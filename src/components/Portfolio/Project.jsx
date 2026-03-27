@@ -26,7 +26,13 @@ const Project = (props) => {
       whileHover={{ y: -10 }}
     >
       <div className="project-image-container">
-        <img src={projectImage} alt={projectName} className="project-image" />
+        {projectImage ? (
+          <img src={projectImage} alt={projectName} className="project-image" />
+        ) : (
+          <div className="project-image-placeholder">
+            <span>{projectName}</span>
+          </div>
+        )}
         <div className="project-overlay"></div>
       </div>
       <div className="project-box-text">

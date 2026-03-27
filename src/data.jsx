@@ -229,6 +229,24 @@ export const projectsData = [
     gitHubLink:
       "https://github.com/Youssef548/Kalbonyan-Elmarsos/tree/main/02-Udemy/-04-Nodejs/Projects/Chat-App",
   },
+  {
+    id: 12,
+    category: "fullstack",
+    projectImage: null,
+    projectName: "Airbnb Clone",
+    projectDesc: "Full-stack Airbnb clone with listings, booking, OAuth, maps, and reviews (MERN + TypeScript)",
+    demoLink: "https://yfawzy.dev/projects/airbnb",
+    gitHubLink: "https://github.com/Youssef548/airbnb-clone",
+  },
+  {
+    id: 13,
+    category: "fullstack",
+    projectImage: null,
+    projectName: "The Mindful Flow",
+    projectDesc: "Full-stack habit tracker with calendar, analytics, streaks, and animations (MERN + React 19)",
+    demoLink: "https://yfawzy.dev/projects/mindful-flow",
+    gitHubLink: "https://github.com/Youssef548/tracking-app",
+  },
 ];
 
 export const projectsNav = [
@@ -257,11 +275,29 @@ export const projectsNav = [
     name: "nodejs",
     displayName: "Node.js",
   },
+  {
+    id: 6,
+    name: "fullstack",
+    displayName: "Full Stack",
+  },
 ];
 
 export const experience = [
   {
     id: 1,
+    title: "Full Stack Developer",
+    company: "DS-Mate",
+    date: "Nov 2025 - Present",
+    description: "Building a scalable e-commerce automation integration platform using the MERN stack.",
+    responsibilities: [
+      "Integrating third-party APIs including Amazon, Shopify, and more to automate e-commerce workflows.",
+      "Implementing queue-based architectures and background job processing for reliable async task execution.",
+      "Building data pipelines and async workflows to handle high-volume platform data efficiently.",
+      "Creating interactive UIs with React and Next.js for seamless user experiences.",
+    ],
+  },
+  {
+    id: 2,
     title: "Full Stack Developer",
     company: "Native Code IQ",
     date: "Oct 2023 - Present",
@@ -274,7 +310,7 @@ export const experience = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Software Engineer Intern",
     company: "KAL BNYAN-EL MARSOS",
     date: "Nov 2022 - Nov 2023",
