@@ -86,7 +86,7 @@ jobs:
             echo "==> Ensuring repo is initialized..."
             if [ ! -d .git ]; then
               git init
-              git remote add origin git@github-personal:Youssef548/my_portfolio.git
+              git remote add origin git@github.com:Youssef548/my_portfolio.git
             fi
 
             echo "==> Pulling latest config..."
