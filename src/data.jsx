@@ -7,6 +7,8 @@ import React from "./imgs/skills/reactjs.png";
 import NEXT from "./imgs/skills/nextjs.png";
 import NODE from "./imgs/skills/nodejs.png";
 // projects images
+import airbnb from "./imgs/project-images/airbnb.png";
+import mindfulflow from "./imgs/project-images/mindful-flow.png";
 import ominifood from "./imgs/project-images/ominifood.png";
 import kasper from "./imgs/project-images/kasper.png";
 import lion from "./imgs/project-images/lion.png";
@@ -232,7 +234,7 @@ export const projectsData = [
   {
     id: 12,
     category: "fullstack",
-    projectImage: null,
+    projectImage: airbnb,
     projectName: "Airbnb Clone",
     projectDesc: "Full-stack Airbnb clone with listings, booking, OAuth, maps, and reviews (MERN + TypeScript)",
     demoLink: "https://yfawzy.dev/projects/airbnb",
@@ -241,7 +243,7 @@ export const projectsData = [
   {
     id: 13,
     category: "fullstack",
-    projectImage: null,
+    projectImage: mindfulflow,
     projectName: "The Mindful Flow",
     projectDesc: "Full-stack habit tracker with calendar, analytics, streaks, and animations (MERN + React 19)",
     demoLink: "https://yfawzy.dev/projects/mindful-flow",
