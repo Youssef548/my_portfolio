@@ -81,11 +81,13 @@ jobs:
             set -euo pipefail
 
             echo "==> Ensuring repo is cloned..."
-            if [ ! -d /opt/my_portfolio/.git ]; then
-              git clone git@github-personal:Youssef548/my_portfolio.git /opt/my_portfolio
-            fi
-
             cd /opt/my_portfolio
+
+            echo "==> Ensuring repo is initialized..."
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin git@github-personal:Youssef548/my_portfolio.git
+            fi
 
             echo "==> Pulling latest config..."
             git fetch origin temp-branch
