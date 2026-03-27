@@ -87,8 +87,8 @@ jobs:
             if [ ! -d .git ]; then
               git init
             fi
-            git remote set-url origin github-my_portfolio:Youssef548/my_portfolio.git 2>/dev/null || \
-              git remote add origin github-my_portfolio:Youssef548/my_portfolio.git
+            git remote set-url origin https://github.com/Youssef548/my_portfolio.git 2>/dev/null || \
+              git remote add origin https://github.com/Youssef548/my_portfolio.git
 
             echo "==> Pulling latest config..."
             git fetch origin temp-branch
